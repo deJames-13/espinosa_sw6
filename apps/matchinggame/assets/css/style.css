@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Kranky&family=Mystery+Quest&family=Finger+Paint&display=swap');
+
+/*general stylings*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Mystery Quest', cursive;
+    background-image: url(../images/blue-boards-with-colourful-blocks-opt.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* found a clever centering trick on https://www.w3schools.com/howto/howto_css_center_button.asp */
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.hr-center {
+    text-align: center;
+}
+
+/* code to hide the cards which are not in the game at the moment */
+.hidden {
+    display: none;
+}
+
+#opaque-layer {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Navbar stylings */
+
+#brandlogo {
+    font-family: 'Finger Paint', cursive;
+    color: white;
+    font-weight: 600;
+    font-size: 1.9em;
+    text-decoration: underline;
+    text-decoration-color: gold;
+}
+
+.fa-gamepad:before {
+    color: gold;
+}
+
+.bg-light {
+    background-color: transparent!important;
+}
+
+/* worked this styling from dev tools */
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color : gold;
+    text-decoration: underline;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-size: 1.5em;
+}
+
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    color: white;
+}
+
+.active {
+    text-decoration: underline;
+    padding-bottom: 0px;
+}
+
+    .navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(280,	280,	280, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-toggler {
+    border: 2px solid white;
+}
+
+.navbar-light .navbar-toggler:focus {
+    box-shadow: none;
+    outline-style: solid;
+    outline-width: 3px;
+    outline-color: white;
+    border-radius: 0;
+}
+
+/* title styling */
+
+#title {
+    font-family: 'Finger Paint', cursive;
+    color: white;
+    font-weight: 600;
+    text-decoration-color: gold;
+    margin-top: 20px;
+}
+
+#title h3 {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-size: 2em;
+    font-family: 'Finger Paint', cursive;
+    text-decoration: none;
+}
+
+.fa-puzzle-piece:before {
+    color: gold;
+}
+ .fa-gamepad:before {
+     color: gold;
+ }
+
+/* styling for the container and buttons in index */
+
+#game-menu {
+    text-align: center;
+}
+
+.container {
+    width: 90vw;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    min-width: 250px;
+    display: flex; 
+    justify-content: center;  
+    align-items: center;
+    margin-top: 40px;
+}
+
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 35px;
+    font-size: 2em;
+    color: white;
+    font-family: 'Finger Paint', cursive;
+}
+
+.container h4 {
+    margin-bottom: 25px;
+    font-family: 'Finger Paint', cursive;
+    color: white;
+}
+
+#how-to-play {
+    width: 180px;
+    background-color: white;
+    color: blue;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Finger Paint', cursive;
+    height: 45px;
+    font-size: 0.9em;
+}
+
+#how-to-play:focus {
+    width: 180px;
+    background-color: white;
+    color: white;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Finger Paint', cursive;
+    height: 45px;
+    font-size: 0.9em;
+}
+
+#how-to-play:hover {
+    color: white;
+}
+  /* found a cool outline trick on https://stackoverflow.com/questions/57464935/font-outline-using-only-css */
+#go-to-game {
+    width: 180px;
+    background-color: darkgreen;
+    color: darkorange;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Finger Paint', cursive;
+    text-shadow: 0 0 1px darkorange, 0 0 1px darkorange, 0 0 1px darkorange, 0 0 1px darkorange;
+    height: 45px;
+    font-size: 0.9em;
+}
+
+#go-to-game:hover {
+    color: darkgreen;
+}
+
+#contact-us {
+    width: 180px;
+    background-color: gold;
+    color: black;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+    font-family: 'Finger Paint', cursive;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    height: 45px;
+    font-size: 0.9em;
+}
+
+#contact-us:hover {
+    color: gold;
+}
+
+/*found a nice way to remove the blue underline in my a tags here at https://www.codegrepper.com/code-examples/css/how+to+remove+the+blue+link+color+in+html */
+a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+
+
+
+/* gameboard and card stylings */
+
+#game-area {
+    flex: 1;
+}
+
+.match-game {
+    border: none;
+    display: flex;
+    height: 480px;
+    width: 480px;
+    flex-wrap: wrap;
+    margin: auto;
+    perspective: 1100px;
+}
+
+.match-card {
+    height: calc(25% - 10px);
+    width : calc(25% - 10px);
+    position: relative;
+    margin: 5px;
+    transform-style: preserve-3d;
+    transition: .6s;
+}
+
+.match-card img {
+    max-width: 100%;
+}
+
+.match-card.flip {
+    transform: rotateY(-180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    border: 4px outset gold;
+    border-radius: 5%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    transform: rotateY(-180deg);
+}
+
+/* styling for the timer */
+
+#timer {
+    width: 100%;
+}
+
+#timer-span {
+    color: white;
+}
+
+/* styling of the difficulty buttons */
+
+#easy {
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-family: 'Finger Paint', cursive;
+    background-color: white;
+    color: blue;
+}
+
+#easy:hover {
+    color: white;
+}
+
+#medium {
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-family: 'Finger Paint', cursive;
+    background-color: darkgreen;
+    color: darkorange;
+}
+#medium:hover {
+    color: darkgreen;
+}
+
+#hard {
+    display: block;
+    width: 180px;
+    margin: auto;
+    margin-top: 15px;
+    font-size: 0.9em;
+    font-family: 'Finger Paint', cursive;
+    background-color: gold;
+    color: black;
+}
+
+#hard:hover {
+    color: gold;
+}
+
+/* footer stylings */
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height : 100vh;
+}
+
+footer {
+    background-color: transparent;
+    color: white;
+    margin-top: 60px;
+    bottom: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+#thank-you {
+    padding: 0px;
+    text-align: center;
+    max-width: 100vw;
+}
+
+#thank-you p {
+    font-size: 0.8em;
+    padding: 20px;
+}
+
+#thank-you h5 {
+    font-family: 'Finger Paint', cursive;
+    margin-top: 20px;
+}
+
+#thank-you p a {
+    color: gold;
+    text-decoration: none;
+}
+
+
+.social-links {
+    color: gold;
+    font-size: 200%;
+    margin-left: 10px;
+}
+
+/* modal stylng */
+
+
+.modal-header {
+    width: 100%;
+    margin: auto;
+    background-color: blue;
+    color: white;
+    font-family: 'Finger Paint', cursive;
+    border: 3px solid gold;
+}
+
+.modal-header h5 {
+    font-weight: 600;
+    margin: 0 auto;
+    font-size: 1.6em;
+}
+
+.modal-header h5 i {
+    color: gold;
+}
+
+.modal-body {
+    background-color: white;
+    color: blue;
+    font-family: 'Mystery Quest', cursive;
+    width: 100%;
+    border: 3px solid gold;
+}
+
+
+.modal-body h6 {
+    color:darkorange;
+    font-size: 1.3em;
+    margin: 15px 0px 15px 0px;
+    font-family: 'Finger Paint', cursive;
+}
+
+.modal-footer {
+    border: 3px solid gold;
+    background-color: blue;
+}
+
+.btn-secondary {
+    color: darkorange;
+    background-color: white;
+    border-color: darkorange;
+}
+/* got the code from https://jsfiddle.net/cq9gm0jn/  */
+.yellow-close {
+  filter: invert(100%)sepia(50%)saturate(10000%)
+}
+
+/* adding styling to the buttons on the game won modal */
+#modal-easy {
+    font-family: 'Finger Paint', cursive;
+    background-color: white;
+    color: blue;
+}
+
+#modal-easy:hover {
+    color: white;
+}
+
+#modal-medium {
+    font-family: 'Finger Paint', cursive;
+    background-color: darkgreen;
+    color: darkorange;
+}
+
+#modal-medium:hover {
+    color: darkgreen;
+}
+
+
+#modal-hard {
+    font-family: 'Finger Paint', cursive;
+    background-color: gold;
+    color: black;
+}
+
+#modal-hard:hover {
+    color: gold;
+}
+
+
+#modal-home {
+    font-family: 'Finger Paint', cursive;
+    background-color: black;
+    color: lightseagreen;
+}
+
+#modal-home:hover {
+    background-color:lightseagreen;
+    color: black;
+}
+
+#game-win-close:hover {
+    background-color: orange;
+}
+
+/* stylings for the modal pop up when you lose */
+#modal-easy-lose {
+    font-family: 'Finger Paint', cursive;
+    background-color: white;
+    color: blue;
+}
+
+#modal-easy-lose:hover {
+    color: white;
+}
+
+#modal-medium-lose {
+    font-family: 'Finger Paint', cursive;
+    background-color: darkgreen;
+    color: darkorange;
+}
+
+#modal-medium-lose:hover {
+    color: darkgreen;
+}
+
+
+#modal-hard-lose {
+    font-family: 'Finger Paint', cursive;
+    background-color: gold;
+    color: black;
+}
+
+#modal-hard-lose:hover {
+    color: gold;
+}
+
+
+#modal-home-lose {
+    font-family: 'Finger Paint', cursive;
+    background-color: black;
+    color: lightseagreen;
+}
+
+#modal-home-lose:hover {
+    background-color:lightseagreen;
+    color: black;
+}
+
+#game-lose-close:hover {
+    background-color: orange;
+}
+
+
+/* styling for the contact page*/
+
+.container-contact {
+    margin: 0 auto;
+    width: 65%;
+    height: 300px;
+    min-width: 250px; 
+    margin-top: 40px;
+    flex: 1;
+}
+
+h1 {
+    color: white;
+    font-family: 'Finger Paint', cursive;
+}
+
+h1 i {
+    color: gold;
+}
+
+
+/* hover css , took the below button hover effects from https://ianlunn.github.io/Hover/*/
+
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: blue;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+
+/* Sweep To Left */
+.hvr-sweep-to-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-left:hover, .hvr-sweep-to-left:focus, .hvr-sweep-to-left:active {
+  color: white;
+}
+.hvr-sweep-to-left:hover:before, .hvr-sweep-to-left:focus:before, .hvr-sweep-to-left:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.hvr-sweep-to-top {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-top:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: darkorange;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 100%;
+  transform-origin: 50% 100%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-top:hover, .hvr-sweep-to-top:focus, .hvr-sweep-to-top:active {
+  color: white;
+}
+.hvr-sweep-to-top:hover:before, .hvr-sweep-to-top:focus:before, .hvr-sweep-to-top:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+
+
+
+
+
+
+
+
+/*  media queries section   */
+
+
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-collapse {
+        display: flex!important;
+        flex-basis: auto;
+        flex-flow: row-reverse;
+    }
+}
+
+
+
+@media (min-width: 500px) {
+    .container {
+        width: 450px;
+        height: 300px;
+        background-color: rgba(0, 0, 0, 0.7);
+        min-width: 250px;
+        display: flex; 
+        justify-content: center;  
+        align-items: center;
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 500px) {
+    #how-to-play {
+        margin: auto;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+    #go-to-game {
+        margin: auto;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+    #contact-us {
+        margin: auto;
+        margin-top: 15px;
+    }
+}
+
+@media (min-width: 500px) {
+footer {
+    margin-top: 120px;
+}
+}
+
+@media (max-width: 500px) {
+    .match-game {
+        width: 360px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 500px) {
+    .match-card {
+        height: calc(25% - 10px);
+        width : calc(33.33% - 10px);
+        position: relative;
+    }
+}
+
+@media (max-width: 500px) {
+    #timer h3 {
+    font-size: 1.4em;
+    }
+}
+
+@media (max-width: 500px) {
+    #title h3 {
+        font-size: 1.4em;
+    }
+}
+
+@media (min-width:500px) {
+    #brandlogo {
+        font-size: 2.1em;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 500px) {
+     h3 {
+        font-size: 1.2em;
+    }
+}
+
